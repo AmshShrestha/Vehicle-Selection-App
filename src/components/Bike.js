@@ -32,8 +32,7 @@ const Bike = ({
             >
               <option value="">Select Company</option>
               <option value="Honda">Honda</option>
-              <option value="Royal Enfield">Royal Enfield</option>
-              <option value="Yamaha">Yamaha</option>
+              <option value="Royal_Enfield">Royal Enfield</option>
             </select>
           </div>
           <div className="mb-4">
@@ -51,18 +50,11 @@ const Bike = ({
                   <option value="Honda Gold Wing">Honda Gold Wing</option>
                 </>
               )}
-              {selectedCompany === "Royal Enfield" && (
+              {selectedCompany === "Royal_Enfield" && (
                 <>
-                  <option value="Model A">Royal Enfield Bullet 350</option>
-                  <option value="Model B">Royal Enfield Classic 350</option>
-                  <option value="Model C">Royal Enfield Himalayan</option>
-                </>
-              )}
-              {selectedCompany === "Yamaha" && (
-                <>
-                  <option value="Model X">Yamaha YZF-R1</option>
-                  <option value="Model Y">Yamaha MT-09</option>
-                  <option value="Model Z">Yamaha YZF-R6</option>
+                  <option value="Royal Enfield Bullet 350">
+                    Royal Enfield Bullet 350
+                  </option>
                 </>
               )}
             </select>
