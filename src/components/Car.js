@@ -31,7 +31,6 @@ const Car = ({
               className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
             >
               <option value="">Select Company</option>
-              <option value="Toyota">Toyota</option>
               <option value="BMW">BMW</option>
               <option value="Ford">Ford</option>
             </select>
@@ -44,25 +43,16 @@ const Car = ({
               className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
             >
               <option value="">Select Model</option>
-              {selectedCompany === "Toyota" && (
-                <>
-                  <option value="Toyota Camry">Toyota Camry</option>
-                  <option value="Toyota Corolla">Toyota Corolla</option>
-                  <option value="Toyota RAV4">Toyota RAV4</option>
-                </>
-              )}
 
               {selectedCompany === "BMW" && (
                 <>
                   <option value="BMW 3 Series">BMW 3 Series</option>
                   <option value="BMW 5 Series">BMW 5 Series</option>
-                  <option value="BMW X5">BMW X5</option>
                 </>
               )}
               {selectedCompany === "Ford" && (
                 <>
                   <option value="Ford F-150">Ford F-150</option>
-                  <option value="Ford Mustang">Ford Mustang</option>
                   <option value="Ford Explorer">Ford Explorer</option>
                 </>
               )}

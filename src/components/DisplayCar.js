@@ -1,30 +1,50 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 
-
-
-const DisplayCar = ({selectedCompany, selectedModel}) => {
+const DisplayBike = ({ selectedCompany, selectedModel }) => {
   const images = {
-    Toyota: {
-      "Model 1": "/images/SuzukiOne.jpg",
-      "Model 2": "/images/SuzukiTwo.jpg",
-      "Model 3": "/images/SuzukiThree.jpg",
+    BMW: {
+      "BMW 3 Series": [
+        "/images/BMW 3 Series 1.png",
+        "/images/BMW 3 Series 2.png",
+        "/images/BMW 3 Series 3.jpg",
+      ],
+      "BMW 5 Series": [
+        "/images/BMW 5 Series 1.jpg",
+        "/images/BMW 5 Series 2.jpg",
+        "/images/BMW 5 Series 3.jpg",
+      ],
+      "Honda Golden Wing": [
+        "/images/Honda Golden Wing 1.jpg",
+        "/images/Honda Golden Wing 2.jpg",
+        "/images/Honda Golden Wing 3.jpg",
+      ],
+    },
+    Ford: {
+      "Ford F-150": [
+        "/images/Ford F150 1.jpg",
+        "/images/Ford F150 2.jpg",
+        "/images/Ford F150 3.jpg",
+      ],
+      "Ford Explorer": [
+        "/images/Ford Explorer 1.jpg",
+        "/images/Ford Explorer 2.jpg",
+        "/images/Ford Explorer 3.jpg",
+      ],
     },
   };
 
-  const [currentImage, setCurrentImage] = useState(
-    images[selectedCompany]["Model 1"]
-  );
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const handleImageClick = (newImageUrl) => {
-    setCurrentImage(newImageUrl);
+  const handleImageClick = (index) => {
+    setCurrentImageIndex(index);
   };
 
   return (
     <div className="container mx-auto flex justify-center items-center">
       <div className="max-w-4xl flex justify-center items-center">
         <img
-          src={currentImage}
+          src={images[selectedCompany][selectedModel][currentImageIndex]}
           alt={selectedCompany}
           className="w-full rounded-lg shadow-lg"
         />
@@ -36,16 +56,16 @@ const DisplayCar = ({selectedCompany, selectedModel}) => {
           </p>
         </div>
         <div className="mt-2">
-          <p className="text-lg font-semibold">Bike Model: {selectedModel}</p>
+          <p className="text-lg font-semibold">Car Model: {selectedModel}</p>
         </div>
         <div className="flex justify-center gap-4 mt-4">
-          {Object.keys(images[selectedCompany]).map((model, index) => (
+          {images[selectedCompany][selectedModel].map((imageUrl, index) => (
             <img
               key={index}
-              src={images[selectedCompany][model]}
+              src={imageUrl}
               alt={`Image ${index + 1}`}
               className="w-20 h-20 cursor-pointer rounded-lg shadow-sm transition duration-300 transform hover:scale-110"
-              onClick={() => handleImageClick(images[selectedCompany][model])}
+              onClick={() => handleImageClick(index)}
             />
           ))}
         </div>
@@ -59,4 +79,4 @@ const mapStateToProps = (state) => ({
   selectedModel: state.selectedModel,
 });
 
-export default connect(mapStateToProps)(DisplayCar);
+export default connect(mapStateToProps)(DisplayBike);
