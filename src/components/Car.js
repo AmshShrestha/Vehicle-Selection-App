@@ -17,10 +17,10 @@ const Car = ({
     setSelectedModel(e.target.value);
   };
   return (
-    <div className="flex items-center justify-center h-screen">
-      <div className="bg-gray-100 p-8 rounded-lg shadow-md">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="bg-white p-8 rounded-lg shadow-md">
         <div className="flex flex-col items-center">
-          <h1 className="text-3xl mb-6 text-center text-gray-800">
+          <h1 className="text-3xl mb-6 text-center text-gray-800 font-bold">
             Car Details
           </h1>
           <div className="mb-4">
@@ -36,14 +36,13 @@ const Car = ({
             </select>
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700">Model </label>
+            <label className="block text-gray-700">Model</label>
             <select
               value={selectedModel}
               onChange={handleModelChange}
               className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
             >
               <option value="">Select Model</option>
-
               {selectedCompany === "BMW" && (
                 <>
                   <option value="BMW 3 Series">BMW 3 Series</option>

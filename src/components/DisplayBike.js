@@ -36,30 +36,39 @@ const DisplayBike = ({ selectedCompany, selectedModel }) => {
   };
 
   return (
-    <div className="container mx-auto flex justify-center items-center">
-      <div className="max-w-4xl flex justify-center items-center">
-        <img
-          src={images[selectedCompany][selectedModel][currentImageIndex]}
-          alt={selectedCompany}
-          className="w-full rounded-lg shadow-lg"
-        />
-      </div>
-      <div className="ml-8">
-        <div className="mt-4">
-          <p className="text-lg font-semibold">
-            Company Name: {selectedCompany}
-          </p>
+    <div className="bg-gray-100 min-h-screen flex justify-center items-center">
+      <div className="container mx-auto flex flex-col items-center">
+        <div className="max-w-4xl">
+          <div className="flex flex-col items-center mb-4">
+            <div className="mb-2">
+              <img
+                src={images[selectedCompany][selectedModel][currentImageIndex]}
+                alt={selectedCompany}
+                className="w-90 h-64 rounded-lg shadow-lg object-cover"
+              />
+            </div>
+            <div className="mb-2">
+              <p className="text-xl font-semibold text-gray-900">
+                Company name: {selectedCompany}
+              </p>
+            </div>
+            <div>
+              <p className="text-xl font-semibold text-gray-900">
+                Model name: {selectedModel}
+              </p>
+            </div>
+          </div>
         </div>
-        <div className="mt-2">
-          <p className="text-lg font-semibold">Bike Model: {selectedModel}</p>
-        </div>
-        <div className="flex justify-center gap-4 mt-4">
+
+        <div className="flex justify-center gap-4">
           {images[selectedCompany][selectedModel].map((imageUrl, index) => (
             <img
               key={index}
               src={imageUrl}
               alt={`Image ${index + 1}`}
-              className="w-20 h-20 cursor-pointer rounded-lg shadow-sm transition duration-300 transform hover:scale-110"
+              className={`w-16 h-16 cursor-pointer rounded-lg shadow-md transition duration-300 transform hover:scale-105 ${
+                index === currentImageIndex ? "opacity-50" : ""
+              }`}
               onClick={() => handleImageClick(index)}
             />
           ))}

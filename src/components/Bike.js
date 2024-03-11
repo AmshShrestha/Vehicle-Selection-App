@@ -17,10 +17,10 @@ const Bike = ({
     setSelectedModel(e.target.value);
   };
   return (
-    <div className="flex items-center justify-center h-screen">
-      <div className="bg-gray-100 p-8 rounded-lg shadow-md">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="bg-white p-8 rounded-lg shadow-md">
         <div className="flex flex-col items-center">
-          <h1 className="text-3xl mb-6 text-center text-gray-800">
+          <h1 className="text-3xl mb-6 text-center text-gray-800 font-bold">
             Bike Details
           </h1>
           <div className="mb-4">
@@ -36,7 +36,7 @@ const Bike = ({
             </select>
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700">Model:</label>
+            <label className="block text-gray-700">Model</label>
             <select
               value={selectedModel}
               onChange={handleModelChange}
