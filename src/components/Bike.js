@@ -47,7 +47,7 @@ const Bike = ({
                 <>
                   <option value="Honda CBR1000RR">Honda CBR1000RR</option>
                   <option value="Honda CRF450R">Honda CRF450R</option>
-                  <option value="Honda Gold Wing">Honda Gold Wing</option>
+                  <option value="Honda Golden Wing">Honda Golden Wing</option>
                 </>
               )}
               {selectedCompany === "Royal_Enfield" && (
